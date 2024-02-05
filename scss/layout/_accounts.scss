@@ -1,0 +1,12 @@
+.accounts_wrapper {
+    @include flex(column);
+    width: 100%;
+
+    select, input, button {
+        margin-bottom: 15px;
+    }
+}
+
+.accounts_buttons-wrapper {
+    .button { width: 100%; }
+}

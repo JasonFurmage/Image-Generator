@@ -1,0 +1,11 @@
+.select-menu, .text-field {
+    line-height: 1.5;
+    padding: 16px 8px;
+    border: 1px solid $grey;
+
+    &:focus {
+        outline: none;
+        border-color: $black;
+        box-shadow: inset 0 0 0 1px $black;
+    }
+}

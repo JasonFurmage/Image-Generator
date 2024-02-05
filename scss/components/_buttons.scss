@@ -1,0 +1,11 @@
+.button {
+    @extend %button;
+}
+
+.add {
+    @include button($white, $black, $grey);
+}
+
+.cancel {
+    @include button($black, $white, $grey);
+}

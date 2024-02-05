@@ -1,0 +1,25 @@
+/* Colors
+   ========================================================================== */
+
+$white          :   #ffffff;
+$black          :   #000;
+$grey           :   #ccc;
+$light-grey     :   #f1f1f1;
+
+
+/* Breakpoints
+   ========================================================================== */
+
+$brkpoint-sm : '(min-width: 576px)';
+$brkpoint-md : '(min-width: 768px)';
+$brkpoint-lg : '(min-width: 992px)';
+$brkpoint-xl : '(min-width: 1330px)';
+
+
+/* Containeer Widths
+   ========================================================================== */
+
+$cont-width-sm : 560px;
+$cont-width-md : 750px;
+$cont-width-lg : 970px;
+$cont-width-xl : 1200px;

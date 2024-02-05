@@ -1,0 +1,30 @@
+// Media queries. 
+@mixin mq($break) {
+    @if $break == "small" { @media #{$brkpoint-sm} { @content; } }
+    @else if $break == "medium" { @media #{$brkpoint-md} { @content; } }
+    @else if $break == "large" { @media #{$brkpoint-lg} { @content; } }
+    @else if $break == "x-large" { @media #{$brkpoint-xl} { @content; } }
+}
+
+// Common flex properties.
+@mixin flex($flex-direction: null, $align-items: null, $justify-content: null) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+// Common text properties
+@mixin text($font-size: null, $text-align: null, $color: null, $line-height: null) {
+    font-size: $font-size;
+    text-align: $text-align;
+    color: $color;
+    line-height: $line-height;
+}
+
+// Common button properties.
+@mixin button($color: null, $background-color: null, $hover-color: null) {
+    color: $color;
+    background-color: $background-color;
+    &:hover { background-color: $hover-color; }
+}

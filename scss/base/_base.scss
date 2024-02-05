@@ -1,0 +1,9 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    @include text(15px, $color: $black, $line-height: 1.5);
+    font-family: "Raleway", sans-serif;
+    background-color: $light-grey;
+}
