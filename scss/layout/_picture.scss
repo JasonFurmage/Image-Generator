@@ -1,0 +1,22 @@
+.picture_wrapper {
+    @include flex(column);
+    width: 100%;
+
+    img, button {
+        margin-bottom: 15px;
+    }
+}
+
+.picture_box {
+
+    img {
+        display: block;
+        width: 100%;
+        border: 1px solid $black;
+    }
+}
+
+.picture_buttons {
+    @include flex();
+    .button { width: 50%; }
+}

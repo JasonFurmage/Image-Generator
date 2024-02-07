@@ -29,10 +29,20 @@
                     <option value="default">Choose account</option>
                     <option value="new">Add new account...</option>
                 </select>
-                <input class="text-field" placeholder="Email Address" id="email">
-                <div class="accounts_buttons-wrapper">
-                    <div><button class="button add">Add</button></div>
-                    <div><button class="button cancel">Cancel</button></div>
+                <div class="accounts_new" id="new">
+                    <div class="accounts_error" id="error">Please enter a valid email address.</div>
+                    <input class="text-field" placeholder="Email Address" id="email">
+                    <div class="accounts_buttons">
+                        <button class="button add" onclick="addAccount()">Add</button>
+                        <button class="button cancel" onclick="hideAddAccount()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="picture_wrapper">
+                <div class="picture_box" id="picture"></div>
+                <div class="picture_buttons">
+                    <button class="button next" onclick="">Next</button>
+                    <button class="button save" onclick="">Save</button>
                 </div>
             </div>
         </div>
@@ -40,6 +50,7 @@
 
 
     <!-- JavaScript -->
+    <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

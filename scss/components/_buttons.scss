@@ -2,10 +2,10 @@
     @extend %button;
 }
 
-.add {
+.add, .save {
     @include button($white, $black, $grey);
 }
 
-.cancel {
+.cancel, .next {
     @include button($black, $white, $grey);
 }

@@ -401,24 +401,24 @@ body {
 }
 
 /* line 5, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_buttons.scss */
-.add {
+.add, .save {
   color: #ffffff;
   background-color: #000;
 }
 
-/* line 29, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
-.add:hover {
+/* line 25, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
+.add:hover, .save:hover {
   background-color: #ccc;
 }
 
 /* line 9, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_buttons.scss */
-.cancel {
+.cancel, .next {
   color: #000;
   background-color: #ffffff;
 }
 
-/* line 29, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
-.cancel:hover {
+/* line 25, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
+.cancel:hover, .next:hover {
   background-color: #ccc;
 }
 
@@ -448,34 +448,80 @@ body {
   margin-bottom: 15px;
 }
 
-/* line 11, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
-.accounts_buttons-wrapper .button {
+/* line 10, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
+.accounts_new {
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+
+/* line 16, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
+.accounts_buttons .button {
   width: 100%;
+}
+
+/* line 19, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
+.accounts_error {
+  display: none;
+  color: #ffffff;
+  background-color: #ff6961;
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 15px;
 }
 
 /* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_containers.scss */
 .container {
-  width: 100%;
-  max-width: 520px;
+  max-width: 400px;
   margin: 0px auto;
   padding: 0px 15px;
 }
 
-@media (min-width: 768px) {
-  /* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_containers.scss */
-  .container {
-    width: 97%;
-    max-width: 1410px;
-  }
-}
-
-/* line 13, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_containers.scss */
+/* line 7, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_containers.scss */
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+
+/* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_gallery.scss */
+.gallery_wrapper {
+  height: 150px;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+/* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_picture.scss */
+.picture_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* line 5, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_picture.scss */
+.picture_wrapper img, .picture_wrapper button {
+  margin-bottom: 15px;
+}
+
+/* line 12, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_picture.scss */
+.picture_box img {
+  display: block;
+  width: 100%;
+  border: 1px solid #000;
+}
+
+/* line 19, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_picture.scss */
+.picture_buttons {
+  display: flex;
+}
+
+/* line 21, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_picture.scss */
+.picture_buttons .button {
+  width: 50%;
 }
 
 /*# sourceMappingURL=application.css.map */
