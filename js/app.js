@@ -52,8 +52,10 @@ function isValidEmail(value) {
 }
 
 fetch('https://picsum.photos/400/300')
+    .then (checkStatus)
     .then (response => response.url)
     .then (imgURL => displayImage(imgURL))
+    .catch (error => console.log('There was an error fetching image:', error));
 
 function displayImage(imgURL) {
     const img = document.createElement('img');
@@ -61,52 +63,7 @@ function displayImage(imgURL) {
     pictureEL.prepend(img);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Initialize an array to store image URLs
-// var imageUrls = [];
-
-// // Function to fetch image URLs from Picsum
-// function fetchImageUrls() {
-//   fetch('https://picsum.photos/200/300') // Fetch a random image from Picsum with dimensions 200x300
-//     .then(response => {
-//       if (!response.ok) {
-//         throw new Error('Network response was not ok');
-//       }
-//       return response.url; // Get the URL of the image
-//     })
-//     .then(url => {
-//       imageUrls.push(url); // Store the URL in the array
-//       displayImages(); // Call a function to display the images (see below)
-//     })
-//     .catch(error => {
-//       console.error('There was a problem with the fetch operation:', error);
-//     });
-// }
-
-// // Function to display images using the stored image URLs
-// function displayImages() {
-//   imageUrls.forEach(url => {
-//     const img = document.createElement('img');
-//     img.src = url;
-//     document.body.appendChild(img); // Append the image to the document body
-//   });
-// }
-
-// // Fetch multiple image URLs and store them in the array
-// fetchImageUrls();
+function checkStatus(response) {
+    if (response.ok) return Promise.resolve(response);
+    else return Promise.reject(new Error(response.statusText));
+}
