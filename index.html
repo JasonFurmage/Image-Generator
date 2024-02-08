@@ -9,6 +9,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/application.css">
+    <link rel="stylesheet" href="css/notif.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +31,6 @@
                     <option value="new">Add new account...</option>
                 </select>
                 <div class="accounts_new" id="new">
-                    <div class="accounts_error" id="error">Please enter a valid email address.</div>
                     <input class="text-field" placeholder="Email Address" id="email">
                     <div class="accounts_buttons">
                         <button class="button add" onclick="addAccount()">Add</button>
@@ -39,10 +39,12 @@
                 </div>
             </div>
             <div class="picture_wrapper">
-                <div class="picture_box" id="picture"></div>
+                <div class="picture_box">
+                    <img src="" id="picture">
+                </div>
                 <div class="picture_buttons">
-                    <button class="button next" onclick="">Next</button>
-                    <button class="button save" onclick="">Save</button>
+                    <button class="button next" onclick="nextImage()">Next</button>
+                    <button class="button save" onclick="saveImage()">Save</button>
                 </div>
             </div>
         </div>
@@ -51,6 +53,7 @@
 
     <!-- JavaScript -->
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/notif.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

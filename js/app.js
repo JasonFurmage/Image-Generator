@@ -2,26 +2,78 @@ const selectEL = document.getElementById('accounts');
 const newEL = document.getElementById('new');
 const emailEL = document.getElementById('email');
 const pictureEL = document.getElementById('picture');
-const errorEL = $('#error');
+
 const accounts = {};
-let selectedValue = 'default';
+let currentAccount = selectEL.value;
+let currentImageURL;
+
+// ------------------------------------------
+//  FETCH FUNCTIONS
+// ------------------------------------------
+
+function fetchImage() {
+    fetch('https://picsum.photos/400/300')
+    .then (checkStatus)
+    .then (response => response.url)
+    .then (imgURL => displayImage(imgURL))
+    
+    .catch (error => {
+        console.log('There was an error fetching image:', error)
+        notif('Could not generate new image.');
+    });
+}
+
+fetchImage();
+
+// ------------------------------------------
+//  HELPER FUNCTIONS
+// ------------------------------------------
+
+function checkStatus(response) {
+    if (response.ok) return Promise.resolve(response);
+    else return Promise.reject(new Error(response.statusText));
+}
+
+function isValidEmail(value) {
+    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regex.test(value);
+}
+
+// ------------------------------------------
+//  EVENT LISTENERS
+// ------------------------------------------
 
 selectEL.addEventListener('change', function() {
-    selectedValue = selectEL.value;
-    newEL.style.display = selectedValue === 'new' ? showAddAccount() : hideAddAccount();
+    currentAccount = selectEL.value;
+    currentAccount === 'new' ? showAddAccount() : hideAddAccount();
 });
+
+// ------------------------------------------
+//  PICTURE FUNCTIONS
+// ------------------------------------------
+
+function displayImage(imgURL) {
+    currentImageURL = imgURL;
+    pictureEL.src = imgURL;
+}
+
+function nextImage() {
+    fetchImage();
+}
+
+function saveImage() {
+    if (!currentImageURL) { notif('No image to save.'); return; }
+    if (currentAccount == 'default' || currentAccount == 'new') { notif('No account selected.'); return; }
+    !accounts[currentAccount].includes(currentImageURL) ? (accounts[currentAccount].push(currentImageURL), notif('Image saved.')) : notif('Image already exists on this account.');
+}
+
+// ------------------------------------------
+//  ACCOUNT FUNCTIONS
+// ------------------------------------------
 
 function addAccount() {
     const email = emailEL.value;
-    errorEL.hide();
-
-    if (isValidEmail(email)) {
-        insertAccount(email);
-        selectedValue = email;
-        hideAddAccount();
-    } else {
-        errorEL.fadeIn(1000);
-    }
+    isValidEmail(email) ? (insertAccount(email), currentAccount = email, hideAddAccount()) : notif('Please enter a valid email address.');
 }
 
 function insertAccount(email) {
@@ -29,6 +81,7 @@ function insertAccount(email) {
     newOption.value = email;
     newOption.textContent = email;
     selectEL.appendChild(newOption);
+    
     accounts[email] = [];
 }
 
@@ -40,30 +93,8 @@ function showAddAccount() {
 function hideAddAccount() {
     newEL.style.display = 'none';
     selectEL.style.display = 'block';
-    errorEL.hide();
     emailEL.value = '';
-    if (selectedValue === 'new') selectedValue = 'default';
-    selectEL.value = selectedValue;
-}
 
-function isValidEmail(value) {
-    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return regex.test(value);
-}
-
-fetch('https://picsum.photos/400/300')
-    .then (checkStatus)
-    .then (response => response.url)
-    .then (imgURL => displayImage(imgURL))
-    .catch (error => console.log('There was an error fetching image:', error));
-
-function displayImage(imgURL) {
-    const img = document.createElement('img');
-    img.src = imgURL;
-    pictureEL.prepend(img);
-}
-
-function checkStatus(response) {
-    if (response.ok) return Promise.resolve(response);
-    else return Promise.reject(new Error(response.statusText));
+    if (currentAccount === 'new') currentAccount = 'default';
+    selectEL.value = currentAccount;
 }

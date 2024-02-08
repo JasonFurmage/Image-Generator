@@ -3,13 +3,15 @@
     @else if $break == "medium" { @media #{$brkpoint-md} { @content; } }
     @else if $break == "large" { @media #{$brkpoint-lg} { @content; } }
     @else if $break == "x-large" { @media #{$brkpoint-xl} { @content; } }
+    @else if $break == "low-height" { @media #{$brkpoint-lh} { @content; } }
 }
 
-@mixin flex($flex-direction: null, $align-items: null, $justify-content: null) {
+@mixin flex($flex-direction: null, $align-items: null, $justify-content: null, $flex-wrap: null) {
     display: flex;
     flex-direction: $flex-direction;
     align-items: $align-items;
     justify-content: $justify-content;
+    flex-wrap: $flex-wrap;
 }
 
 @mixin text($font-size: null, $text-align: null, $color: null, $line-height: null) {

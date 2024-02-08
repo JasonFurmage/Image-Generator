@@ -2,7 +2,7 @@
     @include flex(column);
     width: 100%;
 
-    img, button {
+    div {
         margin-bottom: 15px;
     }
 }
@@ -14,9 +14,23 @@
         width: 100%;
         border: 1px solid $black;
     }
+
+    @include mq("low-height") {
+        height: 138px;
+        text-align: center;
+        background-color: $black;
+
+        img {
+            display: inline-block;
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            border: none;
+        }
+    }
 }
 
 .picture_buttons {
-    @include flex();
+    @include flex(row, $flex-wrap: wrap);
     .button { width: 50%; }
 }

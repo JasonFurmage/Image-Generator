@@ -10,6 +10,7 @@
   border: none;
   text-align: center;
   padding: 12px 24px;
+  overflow: hidden;
   cursor: pointer;
 }
 
@@ -406,7 +407,7 @@ body {
   background-color: #000;
 }
 
-/* line 25, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
+/* line 27, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
 .add:hover, .save:hover {
   background-color: #ccc;
 }
@@ -417,7 +418,7 @@ body {
   background-color: #ffffff;
 }
 
-/* line 25, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
+/* line 27, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
 .cancel:hover, .next:hover {
   background-color: #ccc;
 }
@@ -503,7 +504,7 @@ body {
 }
 
 /* line 5, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_picture.scss */
-.picture_wrapper img, .picture_wrapper button {
+.picture_wrapper div {
   margin-bottom: 15px;
 }
 
@@ -514,12 +515,31 @@ body {
   border: 1px solid #000;
 }
 
-/* line 19, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_picture.scss */
-.picture_buttons {
-  display: flex;
+@media (max-height: 619px) {
+  /* line 10, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_picture.scss */
+  .picture_box {
+    height: 138px;
+    text-align: center;
+    background-color: #000;
+  }
+  /* line 23, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_picture.scss */
+  .picture_box img {
+    display: inline-block;
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    border: none;
+  }
 }
 
-/* line 21, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_picture.scss */
+/* line 33, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_picture.scss */
+.picture_buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* line 35, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_picture.scss */
 .picture_buttons .button {
   width: 50%;
 }
