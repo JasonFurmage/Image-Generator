@@ -9,3 +9,7 @@
 .cancel, .next {
     @include button($black, $white, $grey);
 }
+
+.library {
+    @include button($white, $black, $grey);
+}

@@ -2,6 +2,7 @@ const selectEL = document.getElementById('accounts');
 const newEL = document.getElementById('new');
 const emailEL = document.getElementById('email');
 const pictureEL = document.getElementById('picture');
+const libraryButtonEL = document.getElementById('library-button');
 
 const accounts = {};
 let currentAccount = selectEL.value;
@@ -46,26 +47,9 @@ function isValidEmail(value) {
 selectEL.addEventListener('change', function() {
     currentAccount = selectEL.value;
     currentAccount === 'new' ? showAddAccount() : hideAddAccount();
+    libraryButtonEL.style.display = currentAccount !== 'new' && currentAccount !== 'default' ? 'block' : 'none';
+    updateLibraryButtonTitle();
 });
-
-// ------------------------------------------
-//  PICTURE FUNCTIONS
-// ------------------------------------------
-
-function displayImage(imgURL) {
-    currentImageURL = imgURL;
-    pictureEL.src = imgURL;
-}
-
-function nextImage() {
-    fetchImage();
-}
-
-function saveImage() {
-    if (!currentImageURL) { notif('No image to save.'); return; }
-    if (currentAccount == 'default' || currentAccount == 'new') { notif('No account selected.'); return; }
-    !accounts[currentAccount].includes(currentImageURL) ? (accounts[currentAccount].push(currentImageURL), notif('Image saved.')) : notif('Image already exists on this account.');
-}
 
 // ------------------------------------------
 //  ACCOUNT FUNCTIONS
@@ -97,4 +81,35 @@ function hideAddAccount() {
 
     if (currentAccount === 'new') currentAccount = 'default';
     selectEL.value = currentAccount;
+    libraryButtonEL.style.display = currentAccount !== 'new' && currentAccount !== 'default' ? 'block' : 'none';
+    updateLibraryButtonTitle();
+}
+
+// ------------------------------------------
+//  LIBRARY FUNCTIONS
+// ------------------------------------------
+
+function updateLibraryButtonTitle() {
+    const imageCount = accounts[currentAccount].length;
+    libraryButtonEL.textContent = "View Saved Images (" + imageCount + ") ";
+}
+
+// ------------------------------------------
+//  PICTURE FUNCTIONS
+// ------------------------------------------
+
+function displayImage(imgURL) {
+    currentImageURL = imgURL;
+    pictureEL.src = imgURL;
+}
+
+function nextImage() {
+    fetchImage();
+}
+
+function saveImage() {
+    if (!currentImageURL) { notif('No image to save.'); return; }
+    if (currentAccount == 'default' || currentAccount == 'new') { notif('No account selected.'); return; }
+    !accounts[currentAccount].includes(currentImageURL) ? (accounts[currentAccount].push(currentImageURL), notif('Image saved.')) : notif('Image already exists on this account.');
+    updateLibraryButtonTitle();
 }
