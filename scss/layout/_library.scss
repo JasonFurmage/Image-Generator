@@ -1,6 +1,48 @@
+.library_wrapper {
+    flex: 1;
+    max-height: 600px;
+    width: 100%;
+    background-color: $white;
+    border: 1px solid $grey;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.library_grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+}
+
+.library_buttons {
+    @include flex(column);
+    margin: 30px 0px 15px 0px;
+}
+
+.grid-item {
+    position: relative;
+    height: 0px;
+    padding-bottom: 100%;
+
+    img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+        &:hover {
+            opacity: 0.60;
+        }
+    }
+}
 
 #library-button {
     display: none;
     width: 100%;
     margin-top: 30px;
+}
+
+#back-button {
+    margin: 30px 0px 15px 0px;
 }

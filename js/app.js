@@ -1,8 +1,12 @@
+const mainEL = document.getElementById('main');
+const libraryEL = document.getElementById('library');
 const selectEL = document.getElementById('accounts');
 const newEL = document.getElementById('new');
 const emailEL = document.getElementById('email');
 const pictureEL = document.getElementById('picture');
 const libraryButtonEL = document.getElementById('library-button');
+const libraryTitleEL = document.getElementById('library-title');
+const libraryGridEL = document.getElementById('library-grid');
 
 const accounts = {};
 let currentAccount = selectEL.value;
@@ -40,6 +44,15 @@ function isValidEmail(value) {
     return regex.test(value);
 }
 
+function getUsername() {
+    const username = capitalizeFirstLetter(currentAccount.split('@')[0]);
+    return username;
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 // ------------------------------------------
 //  EVENT LISTENERS
 // ------------------------------------------
@@ -49,6 +62,7 @@ selectEL.addEventListener('change', function() {
     currentAccount === 'new' ? showAddAccount() : hideAddAccount();
     libraryButtonEL.style.display = currentAccount !== 'new' && currentAccount !== 'default' ? 'block' : 'none';
     updateLibraryButtonTitle();
+    updateLibraryTitle();
 });
 
 // ------------------------------------------
@@ -83,15 +97,42 @@ function hideAddAccount() {
     selectEL.value = currentAccount;
     libraryButtonEL.style.display = currentAccount !== 'new' && currentAccount !== 'default' ? 'block' : 'none';
     updateLibraryButtonTitle();
+    updateLibraryTitle();
 }
 
 // ------------------------------------------
 //  LIBRARY FUNCTIONS
 // ------------------------------------------
 
+function showLibrary() {
+    mainEL.style.display = 'none';
+    libraryEL.style.display = 'flex';
+    insertSavedImages();
+}
+
+function hideLibrary() {
+    libraryEL.style.display = 'none';
+    mainEL.style.display = 'flex';
+    libraryGridEL.innerHTML = '';
+}
+
+function updateLibraryTitle() {
+    libraryTitleEL.textContent = `${getUsername()}'s Library`;
+}
+
 function updateLibraryButtonTitle() {
-    const imageCount = accounts[currentAccount].length;
-    libraryButtonEL.textContent = "View Saved Images (" + imageCount + ") ";
+    if (accounts[currentAccount]) {
+        const imageCount = accounts[currentAccount].length;
+        libraryButtonEL.textContent = `View Saved Images (${imageCount})`;
+    }
+}
+
+function insertSavedImages() {
+    let imageURLs = accounts[currentAccount];
+
+    for (let url of imageURLs) {
+        libraryGridEL.insertAdjacentHTML('afterbegin', '<div class="grid-item"><img src="' + url + '"></div>');
+    }
 }
 
 // ------------------------------------------

@@ -23,7 +23,7 @@
 <body>
 
     <div class="container">
-        <div class="content">
+        <div class="content_main" id="main">
             <h1>Image Generator</h1>
             <div class="accounts_wrapper">
                 <select class="select-menu" id="accounts">
@@ -47,7 +47,15 @@
                     <button class="button save" onclick="saveImage()"> Save <i class="fa-solid fa-floppy-disk"></i></button>
                 </div>
             </div>
-            <button class="button library" id="library-button" onclick="saveImage()"> View Saved Images </button>
+            <button class="button library" id="library-button" onclick="showLibrary()"> View Saved Images </button>
+        </div>
+        <div class="content_library" id="library">
+            <h2 id="library-title">example@email.com's pictures</h2>
+            <div class="library_wrapper">
+                <div class="library_grid" id="library-grid">
+                </div>
+            </div>
+            <button class="button back" id="back-button" onclick="hideLibrary()"><i class="fa-solid fa-arrow-left"></i> Back </button>
         </div>
     </div>
 
