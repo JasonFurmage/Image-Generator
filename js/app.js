@@ -1,8 +1,13 @@
+const contentEL = document.getElementById('content');
+const contentWrapperEL = document.getElementById('content-wrapper');
 const mainEL = document.getElementById('main');
 const libraryEL = document.getElementById('library');
-const selectEL = document.getElementById('accounts');
+const libraryEmptyEL = document.getElementById('library-empty');
+const accountsEL = document.getElementById('accounts');
+const selectEL = document.getElementById('select');
 const newEL = document.getElementById('new');
 const emailEL = document.getElementById('email');
+const pictureWrapperEL = document.getElementById('picture-wrapper');
 const pictureEL = document.getElementById('picture');
 const libraryButtonEL = document.getElementById('library-button');
 const libraryTitleEL = document.getElementById('library-title');
@@ -24,7 +29,7 @@ function fetchImage() {
     
     .catch (error => {
         console.log('There was an error fetching image:', error)
-        notif('Could not generate new image.');
+        //notif('Could not generate new image.');
     });
 }
 
@@ -53,6 +58,22 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+function setAccountsPosition() {
+    if (window.innerWidth >= 768) {
+        if (accountsEL.parentNode === mainEL) { mainEL.removeChild(accountsEL); }
+        if (accountsEL.parentNode !== contentEL) { contentEL.insertBefore(accountsEL, contentWrapperEL); }
+        mainEL.style.display = 'flex';
+        libraryEL.classList.add('md-only');
+        insertSavedImages()
+    } else {
+        if (accountsEL.parentNode === contentEL) { contentEL.removeChild(accountsEL); }
+        if (accountsEL.parentNode !== mainEL) { mainEL.insertBefore(accountsEL, pictureWrapperEL); }
+        
+    }
+}
+
+setAccountsPosition();
+
 // ------------------------------------------
 //  EVENT LISTENERS
 // ------------------------------------------
@@ -63,6 +84,12 @@ selectEL.addEventListener('change', function() {
     libraryButtonEL.style.display = currentAccount !== 'new' && currentAccount !== 'default' ? 'block' : 'none';
     updateLibraryButtonTitle();
     updateLibraryTitle();
+    insertSavedImages()
+    updateLibraryEmptyText();
+});
+
+window.addEventListener('resize', function() {
+    setAccountsPosition()
 });
 
 // ------------------------------------------
@@ -71,7 +98,7 @@ selectEL.addEventListener('change', function() {
 
 function addAccount() {
     const email = emailEL.value;
-    isValidEmail(email) ? (insertAccount(email), currentAccount = email, hideAddAccount()) : notif('Please enter a valid email address.');
+    isValidEmail(email) ? (insertAccount(email), currentAccount = email, hideAddAccount()) : $.notifi("Please enter a valid email address");
 }
 
 function insertAccount(email) {
@@ -106,12 +133,12 @@ function hideAddAccount() {
 
 function showLibrary() {
     mainEL.style.display = 'none';
-    libraryEL.style.display = 'flex';
+    libraryEL.classList.toggle("md-only");
     insertSavedImages();
 }
 
 function hideLibrary() {
-    libraryEL.style.display = 'none';
+    libraryEL.classList.toggle("md-only");
     mainEL.style.display = 'flex';
     libraryGridEL.innerHTML = '';
 }
@@ -127,7 +154,26 @@ function updateLibraryButtonTitle() {
     }
 }
 
+function updateLibraryEmptyText() {
+
+    let imageURLs = accounts[currentAccount];
+
+    if (imageURLs) {
+        libraryEmptyEL.style.display = imageURLs.length > 0 ? 'none' : 'block';
+    } else {
+        libraryEmptyEL.style.display = 'block'
+    }
+}
+
+function insertSavedImage() {
+    libraryGridEL.insertAdjacentHTML('afterbegin', '<div class="grid-item"><img src="' + currentImageURL + '"></div>');
+}
+
 function insertSavedImages() {
+    libraryGridEL.innerHTML = "";
+    updateLibraryEmptyText();
+    if (!accounts[currentAccount]) return;
+
     let imageURLs = accounts[currentAccount];
 
     for (let url of imageURLs) {
@@ -145,12 +191,14 @@ function displayImage(imgURL) {
 }
 
 function nextImage() {
+    currentImageURL = null;
     fetchImage();
 }
 
 function saveImage() {
-    if (!currentImageURL) { notif('No image to save.'); return; }
-    if (currentAccount == 'default' || currentAccount == 'new') { notif('No account selected.'); return; }
-    !accounts[currentAccount].includes(currentImageURL) ? (accounts[currentAccount].push(currentImageURL), notif('Image saved.')) : notif('Image already exists on this account.');
+    if (!currentImageURL) { return; }
+    if (currentAccount == 'default' || currentAccount == 'new') { $.notifi("No account selected."); return; }
+    !accounts[currentAccount].includes(currentImageURL) ? (accounts[currentAccount].push(currentImageURL), insertSavedImage()) : $.notifi("Image already exists on this account.");;
     updateLibraryButtonTitle();
+    updateLibraryEmptyText();
 }

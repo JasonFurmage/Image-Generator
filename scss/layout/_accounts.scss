@@ -2,6 +2,12 @@
     @include flex(column);
     width: 100%;
 
+    @include mq(medium) {
+        select {
+            margin-top: 3px;
+        }
+    }
+
     select, input, button {
         margin-bottom: 15px;
     }
@@ -10,8 +16,27 @@
 .accounts_new {
     @include flex(column);
     display: none;
+
+    @include mq(medium) {
+        flex-direction: row;
+        //justify-content: space-between;
+
+        .text-field {
+            width: 50%;
+            margin-right: 15px;
+        }
+    }
 }
 
 .accounts_buttons {
     .button { width: 100%; }
+
+    @include mq(medium) {
+        display: flex;
+        width: 50%;
+        
+        :nth-child(1) {
+            margin-right: 15px;
+        }
+    }
 }

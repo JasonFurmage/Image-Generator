@@ -1,8 +1,5 @@
 @mixin mq($break) {
-    @if $break == "small" { @media #{$brkpoint-sm} { @content; } }
-    @else if $break == "medium" { @media #{$brkpoint-md} { @content; } }
-    @else if $break == "large" { @media #{$brkpoint-lg} { @content; } }
-    @else if $break == "x-large" { @media #{$brkpoint-xl} { @content; } }
+    @if $break == "medium" { @media #{$brkpoint-md} { @content; } }
     @else if $break == "low-height" { @media #{$brkpoint-lh} { @content; } }
 }
 

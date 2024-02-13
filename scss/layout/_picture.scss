@@ -9,6 +9,9 @@
 
 .picture_box {
 
+    position: relative;
+    background-color: $white;
+
     img {
         display: block;
         width: 100%;
@@ -35,3 +38,12 @@
     .button { width: 50%; }
 }
 
+.placeholder {
+
+    img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}

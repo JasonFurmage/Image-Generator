@@ -1,0 +1,15 @@
+.md-only {
+    display: none!important;
+
+    @include mq(medium) {
+        display: flex!important;
+    }
+}
+
+.sm-only {
+    display: block;
+
+    @include mq(medium) {
+        display: none!important;
+    }
+}
