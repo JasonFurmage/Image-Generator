@@ -8,7 +8,7 @@
     }
 }
 
-.content, .content_wrapper, .content_main, .content_library, .content_heading {
+.content, .content_wrapper, .main, .library, .content_heading {
     @include flex(column, center, center);
 }
 
@@ -25,13 +25,13 @@
     }
 }
 
-.content_library, .content_main {
+.library, .main {
     @include mq(medium) {
         width: 50%;
     }
 }
 
-.content_library {
+.library {
     height: 100vh;
     width: 100%;
 

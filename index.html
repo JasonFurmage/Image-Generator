@@ -22,30 +22,47 @@
 
 <body>
 
+    <!-- Container -->
+
     <div class="container">
+
+        <!-- Content -->
+
         <div class="content" id="content">
             <div class="content_heading md-only">
                 <h1>Image Generator</h1>
                 <p>Simply create an account and save your images.</p>
             </div>
+
+            <!-- Accounts will be here on medium+ screen sizes. -->
+
             <div class="content_wrapper" id="content-wrapper">
-                <div class="content_library md-only" id="library">
-                    <h2 class="sm-only" id="library-title">example@email.com's pictures</h2>
+
+                <!-- Library -->
+
+                <div class="library md-only" id="library">
+                    <h2 class="sm-only" id="library-title"></h2>
                     <div class="library_wrapper">
-                        <p id="library-empty">No Saved Images</p>
+                        <p id="library-background">No Saved Images</p>
                         <div class="library_grid" id="library-grid">
                         </div>
                     </div>
                     <button class="button back sm-only" id="back-button" onclick="hideLibrary()"><i class="fa-solid fa-arrow-left"></i> Back </button>
                 </div>
-                <div class="content_main" id="main">
+
+                <!-- Main -->
+
+                <div class="main" id="main">
                     <h1 class="sm-only">Image Generator</h1>
+
+                    <!-- Accounts will be here on small screen sizes. -->
+
                     <div class="accounts_wrapper" id="accounts">
-                        <select class="select-menu" id="select">
+                        <select class="select-menu" id="select-menu">
                             <option value="default">Choose account</option>
                             <option value="new">Add new account...</option>
                         </select>
-                        <div class="accounts_new" id="new">
+                        <div class="accounts_new" id="accounts-new">
                             <input class="text-field" placeholder="Enter your email address" id="email">
                             <div class="accounts_buttons">
                                 <button class="button add" onclick="addAccount()">Add</button>
@@ -53,6 +70,9 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Picture -->
+
                     <div class="picture_wrapper" id="picture-wrapper">
                         <div class="picture_box">
                             <img src="assets/images/placeholder.png" id="picture">
@@ -62,7 +82,7 @@
                             <button class="button save" onclick="saveImage()"> Save <i class="fa-solid fa-floppy-disk"></i></button>
                         </div>
                     </div>
-                    <button class="button library sm-only" id="library-button" onclick="showLibrary()"> View Saved Images </button>
+                    <button class="button gallery sm-only" id="library-button" onclick="showLibrary()"></button>
                 </div>
             </div>
         </div>

@@ -33,9 +33,10 @@
 
     @include mq(medium) {
         display: flex;
+        flex-direction: row-reverse;
         width: 50%;
         
-        :nth-child(1) {
+        :nth-child(2) {
             margin-right: 15px;
         }
     }
