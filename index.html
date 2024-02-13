@@ -22,8 +22,6 @@
 
 <body>
 
-    <!-- Container -->
-
     <div class="container">
 
         <!-- Content -->
@@ -34,7 +32,7 @@
                 <p>Simply create an account and save your images.</p>
             </div>
 
-            <!-- Accounts will be here on medium+ screen sizes. -->
+            <!-- Accounts (Larger Screens) -->
 
             <div class="content_wrapper" id="content-wrapper">
 
@@ -55,7 +53,7 @@
                 <div class="main" id="main">
                     <h1 class="sm-only">Image Generator</h1>
 
-                    <!-- Accounts will be here on small screen sizes. -->
+                    <!-- Accounts (Smaller Screens) -->
 
                     <div class="accounts_wrapper" id="accounts">
                         <select class="select-menu" id="select-menu">
@@ -71,18 +69,18 @@
                         </div>
                     </div>
 
-                    <!-- Picture -->
+                    <!-- Image -->
 
-                    <div class="picture_wrapper" id="picture-wrapper">
-                        <div class="picture_box">
-                            <img src="assets/images/placeholder.png" id="picture">
+                    <div class="image_wrapper" id="image-wrapper">
+                        <div class="image_box">
+                            <img src="assets/images/placeholder.png" id="image">
                         </div>
-                        <div class="picture_buttons">
+                        <div class="image_buttons">
                             <button class="button next" onclick="nextImage()"> Next <i class="fa-solid fa-arrow-right"></i></button>
                             <button class="button save" onclick="saveImage()"> Save <i class="fa-solid fa-floppy-disk"></i></button>
                         </div>
                     </div>
-                    <button class="button gallery sm-only" id="library-button" onclick="showLibrary()"></button>
+                    <button class="button images sm-only" id="images-button" onclick="showLibrary()"></button>
                 </div>
             </div>
         </div>

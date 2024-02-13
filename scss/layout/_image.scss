@@ -1,4 +1,4 @@
-.picture_wrapper {
+.image_wrapper {
     @include flex(column);
     width: 100%;
 
@@ -7,7 +7,7 @@
     }
 }
 
-.picture_box {
+.image_box {
 
     position: relative;
     background-color: $white;
@@ -33,7 +33,7 @@
     }
 }
 
-.picture_buttons {
+.image_buttons {
     @include flex(row, $flex-wrap: wrap);
     .button { width: 50%; }
 }

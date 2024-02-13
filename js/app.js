@@ -7,9 +7,9 @@ const accountsEL = document.getElementById('accounts');
 const selectEL = document.getElementById('select-menu');
 const newEL = document.getElementById('accounts-new');
 const emailEL = document.getElementById('email');
-const pictureWrapperEL = document.getElementById('picture-wrapper');
-const pictureEL = document.getElementById('picture');
-const libraryButtonEL = document.getElementById('library-button');
+const imageWrapperEL = document.getElementById('image-wrapper');
+const imageEL = document.getElementById('image');
+const libraryButtonEL = document.getElementById('images-button');
 const libraryTitleEL = document.getElementById('library-title');
 const libraryGridEL = document.getElementById('library-grid');
 
@@ -67,7 +67,7 @@ function setAccountsPosition() {
         insertSavedImages()
     } else {
         if (accountsEL.parentNode === contentEL) { contentEL.removeChild(accountsEL); }
-        if (accountsEL.parentNode !== mainEL) { mainEL.insertBefore(accountsEL, pictureWrapperEL); }
+        if (accountsEL.parentNode !== mainEL) { mainEL.insertBefore(accountsEL, imageWrapperEL); }
         
     }
 }
@@ -187,7 +187,7 @@ function insertSavedImages() {
 
 function displayImage(imgURL) {
     currentImageURL = imgURL;
-    pictureEL.src = imgURL;
+    imageEL.src = imgURL;
 }
 
 function nextImage() {
