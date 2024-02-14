@@ -15,3 +15,29 @@
         display: none!important;
     }
 }
+
+
+// ------------------------------------------
+//  BUG FIXES
+// ------------------------------------------
+
+// Required so entire page is viewable on devices with low height (e.g. landscape iPhone).
+@media (max-height: 479px) {
+
+    .content { height: 100%!important; }
+
+    .content_heading {
+        h1 { margin-top: 20px!important; }
+    }
+
+    .library_wrapper {
+        flex: initial!important;
+        height: 100%;
+        min-height: 196px!important;
+    }
+}
+
+// Required so entire library is viewable on devices with low height (e.g. landscape iPhone).
+@media (max-width: 768px) and (max-height: 345px) {
+    .library { height: 100%!important; }
+}
