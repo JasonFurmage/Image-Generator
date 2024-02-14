@@ -1,16 +1,18 @@
+// Media queries.
 @mixin mq($break) {
     @if $break == "medium" { @media #{$brkpoint-md} { @content; } }
-    @else if $break == "low-height" { @media #{$brkpoint-lh} { @content; } }
+    @else if $break == "low" { @media #{$brkpoint-lo} { @content; } }
 }
 
-@mixin flex($flex-direction: null, $align-items: null, $justify-content: null, $flex-wrap: null) {
+// Common flex properties.
+@mixin flex($flex-direction: null, $align-items: null, $justify-content: null) {
     display: flex;
     flex-direction: $flex-direction;
     align-items: $align-items;
     justify-content: $justify-content;
-    flex-wrap: $flex-wrap;
 }
 
+// Common text properties.
 @mixin text($font-size: null, $text-align: null, $color: null, $line-height: null) {
     font-size: $font-size;
     text-align: $text-align;
@@ -18,6 +20,7 @@
     line-height: $line-height;
 }
 
+// Common button properties.
 @mixin button($color: null, $background-color: null, $hover-color: null) {
     color: $color;
     background-color: $background-color;

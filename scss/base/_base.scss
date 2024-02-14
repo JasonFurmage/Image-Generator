@@ -8,6 +8,7 @@ body {
     background-color: $light-grey;
 }
 
+// Make background color consistent on different browsers.
 select {
     background-color: $white;
 }

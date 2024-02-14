@@ -2,25 +2,26 @@
     @include flex(column);
     width: 100%;
 
-    @include mq(medium) {
-        select {
-            margin-top: 3px;
-        }
-    }
+    // Add spacing between account elements.
+    select, input, button { margin-bottom: 15px; }
 
-    select, input, button {
-        margin-bottom: 15px;
+    // Add extra space above select on screens at least 768px wide (just for aligning select and text field).
+    @include mq(medium) {
+        select { margin-top: 3px; }
     }
 }
 
 .accounts_new {
     @include flex(column);
+
+    // Hide by default.
     display: none;
 
+    // Put text field and buttons side by side on screens at aleast 768px wide.
     @include mq(medium) {
         flex-direction: row;
-        //justify-content: space-between;
 
+        // Make text field take up half the container and add spacing.
         .text-field {
             width: 50%;
             margin-right: 15px;
@@ -29,15 +30,16 @@
 }
 
 .accounts_buttons {
+
+    // Put buttons on seperate lines and fill container width.
     .button { width: 100%; }
 
+    // Put buttons on same line and reverse order on screens at least 768px wide.
     @include mq(medium) {
-        display: flex;
-        flex-direction: row-reverse;
+        @include flex($flex-direction: row-reverse);
         width: 50%;
         
-        :nth-child(2) {
-            margin-right: 15px;
-        }
+        // Add spacing to between buttons.
+        :nth-child(2) { margin-right: 15px; }
     }
 }

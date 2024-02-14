@@ -2,27 +2,30 @@
     @include flex(column);
     width: 100%;
 
-    div {
-        margin-bottom: 15px;
-    }
+    // Add spacing between image elements.
+    div { margin-bottom: 15px; }
 }
 
 .image_box {
-
-    position: relative;
-    background-color: $white;
-
+    // Make image fill container and add black border.
     img {
         display: block;
         width: 100%;
         border: 1px solid $black;
+
+        // Make background color white so placeholder image is visible.
+        background-color: $white;
     }
 
-    @include mq("low-height") {
+    // Decrease image height on screens up to 619px high.
+    @include mq(low) {
         height: 138px;
+
+        // Center image and add black bars to both sides.
         text-align: center;
         background-color: $black;
 
+        // Make image stay within container and keep aspect ratio.
         img {
             display: inline-block;
             height: 100%;
@@ -33,17 +36,8 @@
     }
 }
 
+// Put buttons side by side take up equal space.
 .image_buttons {
-    @include flex(row, $flex-wrap: wrap);
+    @include flex(row);
     .button { width: 50%; }
-}
-
-.placeholder {
-
-    img {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
 }

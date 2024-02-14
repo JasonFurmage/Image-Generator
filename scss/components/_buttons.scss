@@ -2,7 +2,8 @@
     @extend %button;
 }
 
-.add, .save {
+// Set button background and hover colors.
+.add, .save, .lib {
     @include button($white, $black, $grey);
 }
 
@@ -10,10 +11,7 @@
     @include button($black, $white, $grey);
 }
 
-.images {
-    @include button($white, $black, $grey);
-}
-
+// Change icon margin to right side on back button.
 .back {
     i { margin: 0px 5px 0px 0px; }
 }

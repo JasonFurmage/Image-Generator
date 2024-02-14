@@ -32,7 +32,7 @@
                 <p>Simply create an account and save your images.</p>
             </div>
 
-            <!-- Accounts (Larger Screens) -->
+            <!-- Accounts (Will be here on larger screens) -->
 
             <div class="content_wrapper" id="content-wrapper">
 
@@ -42,10 +42,10 @@
                     <h2 class="sm-only" id="library-title"></h2>
                     <div class="library_wrapper">
                         <p id="library-background">No Saved Images</p>
-                        <div class="library_grid" id="library-grid">
+                        <div class="grid" id="grid">
                         </div>
                     </div>
-                    <button class="button back sm-only" id="back-button" onclick="hideLibrary()"><i class="fa-solid fa-arrow-left"></i> Back </button>
+                    <button class="button back sm-only" onclick="hideLibrary()"><i class="fa-solid fa-arrow-left"></i> Back </button>
                 </div>
 
                 <!-- Main -->
@@ -53,7 +53,7 @@
                 <div class="main" id="main">
                     <h1 class="sm-only">Image Generator</h1>
 
-                    <!-- Accounts (Smaller Screens) -->
+                    <!-- Accounts (Will be here on smaller screens) -->
 
                     <div class="accounts_wrapper" id="accounts">
                         <select class="select-menu" id="select-menu">
@@ -80,7 +80,7 @@
                             <button class="button save" onclick="saveImage()"> Save <i class="fa-solid fa-floppy-disk"></i></button>
                         </div>
                     </div>
-                    <button class="button images sm-only" id="images-button" onclick="showLibrary()"></button>
+                    <button class="button lib sm-only" id="lib-button" onclick="showLibrary()"></button>
                 </div>
             </div>
         </div>

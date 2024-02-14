@@ -9,9 +9,9 @@ const newEL = document.getElementById('accounts-new');
 const emailEL = document.getElementById('email');
 const imageWrapperEL = document.getElementById('image-wrapper');
 const imageEL = document.getElementById('image');
-const libraryButtonEL = document.getElementById('images-button');
+const libraryButtonEL = document.getElementById('lib-button');
 const libraryTitleEL = document.getElementById('library-title');
-const libraryGridEL = document.getElementById('library-grid');
+const libraryGridEL = document.getElementById('grid');
 
 const accounts = {};
 let currentAccount = selectEL.value;

@@ -1,3 +1,4 @@
+// Only show on screens at least 768px wide.
 .md-only {
     display: none!important;
 
@@ -6,6 +7,7 @@
     }
 }
 
+// Only show on screens up to 767px wide.
 .sm-only {
     display: block;
 

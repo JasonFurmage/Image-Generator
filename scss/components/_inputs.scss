@@ -3,6 +3,7 @@
     padding: 16px 8px;
     border: 1px solid $grey;
 
+    // Override default browser focus style.
     &:focus {
         outline: none;
         border-color: $black;

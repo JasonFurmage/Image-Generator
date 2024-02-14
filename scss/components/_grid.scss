@@ -1,0 +1,27 @@
+.grid {
+    width: 100%;
+
+    // Set up grid with 3 images per row.
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.grid-item {
+    position: relative;
+
+    // Make grid items a perfect square.
+    height: 0px;
+    padding-bottom: 100%;
+
+    // Make image fill grid item.
+    img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+        // Highlight images on hover.
+        &:hover { opacity: 0.60; }
+    }
+}

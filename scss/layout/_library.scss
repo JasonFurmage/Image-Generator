@@ -1,14 +1,39 @@
+.library {
+    @include flex(column, center, center);
+    width: 100%;
+
+    // Keep library within viewport height.
+    height: 100vh;
+
+    // Add space above and below back button.
+    .back {
+        margin: 30px 0px 15px 0px;
+    }
+
+    // Make library take up half the screen on screens at least 768px wide.
+    @include mq(medium) {
+        height: 100%;
+        width: 50%;
+        margin-right: 15px;
+    }
+}
+
 .library_wrapper {
     position: relative;
+
+    // Make library wrapper fill free space but limit to 600px.
     flex: 1;
     max-height: 600px;
     width: 100%;
+
     background-color: $white;
     border: 1px solid $grey;
     padding: 20px;
-    overflow-y: auto;
-    margin-bottom: 15px;
 
+    // Add scroll bar when grid becomes too big.
+    overflow-y: auto;
+
+    // Position 'No Saved Images' in center library wrapper.
     p {
         position: absolute;
         top: 50%;
@@ -17,46 +42,12 @@
         color: $dark-grey;
     }
 
+    // Match library height with main height on screens at least 768px wide.
     @include mq(medium) {
         max-height: 341px;
+        margin-bottom: 15px;
+
+        // Match library height with main height on screens up to 619px high.
+        @include mq(low) { max-height: 196px; }
     }
-}
-
-.library_grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-    width: 100%;
-}
-
-.library_buttons {
-    @include flex(column);
-    margin: 30px 0px 15px 0px;
-}
-
-.grid-item {
-    position: relative;
-    height: 0px;
-    padding-bottom: 100%;
-
-    img {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-
-        &:hover {
-            opacity: 0.60;
-        }
-    }
-}
-
-#images-button {
-    display: none;
-    width: 100%;
-    margin-top: 30px;
-}
-
-#back-button {
-    margin: 30px 0px 15px 0px;
 }

@@ -1,3 +1,4 @@
+// Default button.
 %button {
     display: inline-block;
     border: none;
@@ -5,5 +6,7 @@
     padding: 12px 24px;
     overflow: hidden;
     cursor: pointer;
+
+    // Add space between title and icon.
     i { margin-left: 5px; }
 }

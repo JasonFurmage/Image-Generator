@@ -1,4 +1,4 @@
-/* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_placeholders.scss */
+/* line 2, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_placeholders.scss */
 .button {
   display: inline-block;
   border: none;
@@ -8,30 +8,30 @@
   cursor: pointer;
 }
 
-/* line 8, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_placeholders.scss */
+/* line 11, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_placeholders.scss */
 .button i {
   margin-left: 5px;
 }
 
-/* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_helper.scss */
+/* line 2, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_helper.scss */
 .md-only {
   display: none !important;
 }
 
 @media (min-width: 768px) {
-  /* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_helper.scss */
+  /* line 2, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_helper.scss */
   .md-only {
     display: flex !important;
   }
 }
 
-/* line 9, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_helper.scss */
+/* line 11, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_helper.scss */
 .sm-only {
   display: block;
 }
 
 @media (min-width: 768px) {
-  /* line 9, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_helper.scss */
+  /* line 11, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_helper.scss */
   .sm-only {
     display: none !important;
   }
@@ -424,47 +424,64 @@ body {
   background-color: #f1f1f1;
 }
 
-/* line 11, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/base/_base.scss */
+/* line 12, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/base/_base.scss */
 select {
   background-color: #ffffff;
 }
 
-/* line 5, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_buttons.scss */
-.add, .save {
+/* line 6, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_buttons.scss */
+.add, .save, .lib {
   color: #ffffff;
   background-color: #000;
 }
 
-/* line 24, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
-.add:hover, .save:hover {
+/* line 27, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
+.add:hover, .save:hover, .lib:hover {
   background-color: #ccc;
 }
 
-/* line 9, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_buttons.scss */
+/* line 10, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_buttons.scss */
 .cancel, .next, .back {
   color: #000;
   background-color: #ffffff;
 }
 
-/* line 24, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
+/* line 27, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
 .cancel:hover, .next:hover, .back:hover {
   background-color: #ccc;
 }
 
-/* line 13, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_buttons.scss */
-.images {
-  color: #ffffff;
-  background-color: #000;
-}
-
-/* line 24, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
-.images:hover {
-  background-color: #ccc;
-}
-
-/* line 18, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_buttons.scss */
+/* line 16, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_buttons.scss */
 .back i {
   margin: 0px 5px 0px 0px;
+}
+
+/* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_grid.scss */
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* line 10, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_grid.scss */
+.grid-item {
+  position: relative;
+  height: 0px;
+  padding-bottom: 100%;
+}
+
+/* line 18, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_grid.scss */
+.grid-item img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* line 25, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_grid.scss */
+.grid-item img:hover {
+  opacity: 0.60;
 }
 
 /* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_inputs.scss */
@@ -474,7 +491,7 @@ select {
   border: 1px solid #ccc;
 }
 
-/* line 6, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_inputs.scss */
+/* line 7, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_inputs.scss */
 .select-menu:focus, .text-field:focus {
   outline: none;
   border-color: #000;
@@ -488,19 +505,19 @@ select {
   width: 100%;
 }
 
+/* line 6, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
+.accounts_wrapper select, .accounts_wrapper input, .accounts_wrapper button {
+  margin-bottom: 15px;
+}
+
 @media (min-width: 768px) {
-  /* line 6, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
+  /* line 10, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
   .accounts_wrapper select {
     margin-top: 3px;
   }
 }
 
-/* line 11, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
-.accounts_wrapper select, .accounts_wrapper input, .accounts_wrapper button {
-  margin-bottom: 15px;
-}
-
-/* line 16, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
+/* line 14, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
 .accounts_new {
   display: flex;
   flex-direction: column;
@@ -508,187 +525,82 @@ select {
 }
 
 @media (min-width: 768px) {
-  /* line 16, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
+  /* line 14, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
   .accounts_new {
     flex-direction: row;
   }
-  /* line 24, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
+  /* line 25, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
   .accounts_new .text-field {
     width: 50%;
     margin-right: 15px;
   }
 }
 
-/* line 32, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
+/* line 35, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
 .accounts_buttons .button {
   width: 100%;
 }
 
 @media (min-width: 768px) {
-  /* line 31, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
+  /* line 32, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
   .accounts_buttons {
     display: flex;
     flex-direction: row-reverse;
     width: 50%;
   }
-  /* line 39, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
+  /* line 43, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
   .accounts_buttons :nth-child(2) {
     margin-right: 15px;
   }
 }
 
-/* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
+/* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_container.scss */
 .container {
   max-width: 400px;
-  margin: 0px auto;
   padding: 0px 15px;
+  margin: 0px auto;
 }
 
 @media (min-width: 768px) {
-  /* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
+  /* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_container.scss */
   .container {
     max-width: 800px;
   }
 }
 
-/* line 11, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
-.content, .content_wrapper, .main, .library, .content_heading {
+/* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
+.content, .content_wrapper, .content_heading {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* line 15, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
+/* line 6, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
 .content {
   height: 100vh;
 }
 
-/* line 19, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
+/* line 10, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
 .content_wrapper {
   width: 100%;
 }
 
 @media (min-width: 768px) {
-  /* line 19, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
+  /* line 10, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
   .content_wrapper {
     flex-direction: row;
   }
 }
 
-@media (min-width: 768px) {
-  /* line 28, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
-  .library, .main {
-    width: 50%;
-  }
-}
-
-/* line 34, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
-.library {
-  height: 100vh;
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  /* line 34, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
-  .library {
-    height: 100%;
-    width: 50%;
-    margin-right: 15px;
-  }
-}
-
-@media (min-width: 768px) and (max-height: 619px) {
-  /* line 44, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
-  .library .library_wrapper {
-    max-height: 196px;
-  }
-}
-
-/* line 53, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
+/* line 21, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
 .content_heading h1, .content_heading p {
   margin-top: 0px;
 }
 
-/* line 57, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
+/* line 22, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_content.scss */
 .content_heading p {
   margin-bottom: 30px;
-}
-
-/* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
-.library_wrapper {
-  position: relative;
-  flex: 1;
-  max-height: 600px;
-  width: 100%;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  padding: 20px;
-  overflow-y: auto;
-  margin-bottom: 15px;
-}
-
-/* line 12, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
-.library_wrapper p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #757575;
-}
-
-@media (min-width: 768px) {
-  /* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
-  .library_wrapper {
-    max-height: 341px;
-  }
-}
-
-/* line 25, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
-.library_grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  width: 100%;
-}
-
-/* line 32, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
-.library_buttons {
-  display: flex;
-  flex-direction: column;
-  margin: 30px 0px 15px 0px;
-}
-
-/* line 37, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
-.grid-item {
-  position: relative;
-  height: 0px;
-  padding-bottom: 100%;
-}
-
-/* line 42, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
-.grid-item img {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-/* line 48, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
-.grid-item img:hover {
-  opacity: 0.60;
-}
-
-/* line 54, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
-#images-button {
-  display: none;
-  width: 100%;
-  margin-top: 30px;
-}
-
-/* line 60, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
-#back-button {
-  margin: 30px 0px 15px 0px;
 }
 
 /* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
@@ -698,32 +610,27 @@ select {
   width: 100%;
 }
 
-/* line 5, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
+/* line 6, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
 .image_wrapper div {
   margin-bottom: 15px;
 }
 
-/* line 10, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
-.image_box {
-  position: relative;
-  background-color: #ffffff;
-}
-
-/* line 15, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
+/* line 11, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
 .image_box img {
   display: block;
   width: 100%;
   border: 1px solid #000;
+  background-color: #ffffff;
 }
 
 @media (max-height: 619px) {
-  /* line 10, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
+  /* line 9, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
   .image_box {
     height: 138px;
     text-align: center;
     background-color: #000;
   }
-  /* line 26, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
+  /* line 29, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
   .image_box img {
     display: inline-block;
     height: 100%;
@@ -733,24 +640,97 @@ select {
   }
 }
 
-/* line 36, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
+/* line 40, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
 .image_buttons {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
 }
 
-/* line 38, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
+/* line 42, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
 .image_buttons .button {
   width: 50%;
 }
 
-/* line 43, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_image.scss */
-.placeholder img {
-  position: absolute;
-  height: 100%;
+/* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
+.library {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  object-fit: cover;
+  height: 100vh;
+}
+
+/* line 9, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
+.library .back {
+  margin: 30px 0px 15px 0px;
+}
+
+@media (min-width: 768px) {
+  /* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
+  .library {
+    height: 100%;
+    width: 50%;
+    margin-right: 15px;
+  }
+}
+
+/* line 21, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
+.library_wrapper {
+  position: relative;
+  flex: 1;
+  max-height: 600px;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* line 37, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
+.library_wrapper p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #757575;
+}
+
+@media (min-width: 768px) {
+  /* line 21, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
+  .library_wrapper {
+    max-height: 341px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 768px) and (max-height: 619px) {
+  /* line 21, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
+  .library_wrapper {
+    max-height: 196px;
+  }
+}
+
+/* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_main.scss */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 5, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_main.scss */
+.main .lib {
+  display: none;
+  width: 100%;
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  /* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_main.scss */
+  .main {
+    width: 50%;
+  }
 }
 
 /*# sourceMappingURL=application.css.map */

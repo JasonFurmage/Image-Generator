@@ -1,0 +1,16 @@
+.main {
+    @include flex(column, center, center);
+
+    // Hide saved images button by default and add spacing above.
+    .lib {
+        display: none;
+        width: 100%;
+        margin-top: 30px;
+    }
+    
+    // Make main take up half the screen on screens at least 768px wide.
+    @include mq(medium) {
+        width: 50%;
+    }
+}
+
