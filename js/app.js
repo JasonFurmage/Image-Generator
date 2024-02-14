@@ -29,7 +29,9 @@ function fetchImage() {
     
     .catch (error => {
         console.log('There was an error fetching image:', error)
-        //notif('Could not generate new image.');
+        $.notifi("Could not generate new image.", {
+            noticeClass:'custom-class'
+        });
     });
 }
 
