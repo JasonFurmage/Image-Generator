@@ -42,12 +42,11 @@
         color: $dark-grey;
     }
 
-    // Match library height with main height on screens at least 768px wide.
-    @include mq(medium) {
-        max-height: 341px;
-        margin-bottom: 15px;
+    // Add space between library and picture.
+    @include mq(medium) { margin-bottom: 15px; }
 
-        // Match library height with main height on screens up to 619px high.
-        @include mq(low) { max-height: 196px; }
-    }
+    // Match library height with picture height according to screen size.
+    @include mq(medium) { max-height: 265px; @include mq(low) { max-height: 196px; } }
+    @include mq(large) { max-height: 340px; @include mq(low) { max-height: 196px; } }
+    @include mq(x-large) { max-height: 415px;  @include mq(low) { max-height: 196px; } }
 }

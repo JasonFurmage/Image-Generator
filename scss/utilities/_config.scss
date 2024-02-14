@@ -13,10 +13,14 @@ $dark-grey      :   #757575;
 // ------------------------------------------
 
 $brkpoint-md : '(min-width: 768px)';
+$brkpoint-lg : '(min-width: 992px)';
+$brkpoint-xl : '(min-width: 1200px)';
 $brkpoint-lo : '(max-height: 619px)';
 
 // ------------------------------------------
 //  CONTAINER WIDTHS
 // ------------------------------------------
 
-$cont-width-md : 750px;
+$cont-width-md : 600px;
+$cont-width-lg : 800px;
+$cont-width-xl : 1000px;

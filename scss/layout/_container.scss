@@ -5,6 +5,8 @@
     padding: 0px 15px;
     margin: 0px auto;
 
-    // Increase max width on screens at least 768px wide.
-    @include mq(medium) { max-width: 800px; }
+    // Increase max width depending on screen size.
+    @include mq(medium) { max-width: $cont-width-md; }
+    @include mq(large) { max-width: $cont-width-lg; }
+    @include mq(x-large) { max-width: $cont-width-xl; }
 }

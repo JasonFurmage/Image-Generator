@@ -459,7 +459,7 @@ select {
   background-color: #000;
 }
 
-/* line 27, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
+/* line 29, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
 .add:hover, .save:hover, .lib:hover {
   background-color: #ccc;
 }
@@ -470,7 +470,7 @@ select {
   background-color: #ffffff;
 }
 
-/* line 27, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
+/* line 29, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/utilities/_mixins.scss */
 .cancel:hover, .next:hover, .back:hover {
   background-color: #ccc;
 }
@@ -588,7 +588,21 @@ select {
 @media (min-width: 768px) {
   /* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_container.scss */
   .container {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_container.scss */
+  .container {
     max-width: 800px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_container.scss */
+  .container {
+    max-width: 1000px;
   }
 }
 
@@ -723,12 +737,46 @@ select {
 @media (min-width: 768px) {
   /* line 21, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
   .library_wrapper {
-    max-height: 341px;
     margin-bottom: 15px;
   }
 }
 
+@media (min-width: 768px) {
+  /* line 21, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
+  .library_wrapper {
+    max-height: 265px;
+  }
+}
+
 @media (min-width: 768px) and (max-height: 619px) {
+  /* line 21, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
+  .library_wrapper {
+    max-height: 196px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 21, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
+  .library_wrapper {
+    max-height: 340px;
+  }
+}
+
+@media (min-width: 992px) and (max-height: 619px) {
+  /* line 21, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
+  .library_wrapper {
+    max-height: 196px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 21, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
+  .library_wrapper {
+    max-height: 415px;
+  }
+}
+
+@media (min-width: 1200px) and (max-height: 619px) {
   /* line 21, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_library.scss */
   .library_wrapper {
     max-height: 196px;
