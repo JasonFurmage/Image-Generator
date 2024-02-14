@@ -31,9 +31,7 @@ function fetchImage() {
     
     .catch (error => {
         console.log('There was an error fetching image:', error)
-        $.notifi("Could not generate new image.", {
-            noticeClass:'custom-class'
-        });
+        $.notifi("Could not generate new image.", { noticeClass:'custom-class' });
     });
 }
 
@@ -102,7 +100,7 @@ window.addEventListener('resize', function() {
 
 function addAccount() {
     const email = emailEL.value;
-    isValidEmail(email) ? (insertAccount(email), currentAccount = email, hideAddAccount()) : $.notifi("Please enter a valid email address");
+    isValidEmail(email) ? (insertAccount(email), currentAccount = email, hideAddAccount()) : $.notifi("Please enter a valid email address", { noticeClass:'custom-class' });
 }
 
 function insertAccount(email) {
@@ -201,8 +199,8 @@ function nextImage() {
 
 function saveImage() {
     if (!currentImageURL) { return; }
-    if (currentAccount == 'default' || currentAccount == 'new') { $.notifi("No account selected."); return; }
-    !accounts[currentAccount].includes(currentImageURL) ? (accounts[currentAccount].push(currentImageURL), insertSavedImage()) : $.notifi("Image already exists on this account.");;
+    if (currentAccount == 'default' || currentAccount == 'new') { $.notifi("No account selected.", { noticeClass:'custom-class' }); return; }
+    !accounts[currentAccount].includes(currentImageURL) ? (accounts[currentAccount].push(currentImageURL), insertSavedImage()) : $.notifi("Image already exists on this account.", { noticeClass:'custom-class' });;
     updateLibraryButtonTitle();
     updateLibraryEmptyText();
 }
