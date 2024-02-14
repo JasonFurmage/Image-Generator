@@ -100,7 +100,7 @@ window.addEventListener('resize', function() {
 
 function addAccount() {
     const email = emailEL.value;
-    isValidEmail(email) ? (insertAccount(email), currentAccount = email, hideAddAccount()) : $.notifi("Please enter a valid email address", { noticeClass:'custom-class' });
+    isValidEmail(email) ? (insertAccount(email), currentAccount = email, hideAddAccount()) : $.notifi("Please enter a valid email address.", { noticeClass:'custom-class' });
 }
 
 function insertAccount(email) {
