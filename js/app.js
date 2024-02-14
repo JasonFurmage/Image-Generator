@@ -1,3 +1,5 @@
+// This entire file is a mess and needs to be cleaned up so there are probably bugs and missing features. //
+
 const contentEL = document.getElementById('content');
 const contentWrapperEL = document.getElementById('content-wrapper');
 const mainEL = document.getElementById('main');
