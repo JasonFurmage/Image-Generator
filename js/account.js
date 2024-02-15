@@ -23,7 +23,11 @@ function addAccount() {
 
     if (isValidEmail(email)) {
 
-        if (isDuplicateAccount(email)) { $.notifi("Account already exists.", { noticeClass:'custom-class failure' }); return; }
+        if (isDuplicateAccount(email)) { 
+            $.notifi("Account already exists.", { noticeClass:'custom-class failure' });
+            textFieldEL.classList.add('error'); 
+            return; 
+        }
 
         savedImages[email] = [];
         addSelectMenuOption(email);
