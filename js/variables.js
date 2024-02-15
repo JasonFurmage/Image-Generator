@@ -36,6 +36,7 @@ const accountsWrapperEL = document.getElementById('accounts-wrapper');
 const selectMenuEL = document.getElementById('select-menu');
 const accountsNewEL = document.getElementById('accounts-new');
 const textFieldEL = document.getElementById('text-field');
+const addButtonEL = document.getElementById('add-button');
 
 // ------------------------------------------
 //  IMAGE ELEMENTS

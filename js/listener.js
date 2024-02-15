@@ -20,6 +20,15 @@ textFieldEL.addEventListener('focus', function() {
     textFieldEL.classList.remove('error');
 })
 
+// Listen for key press on text field so we can click add when enter button is pushed.
+textFieldEL.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        addButtonEL.click();
+        textFieldEL.blur();
+    }
+});
+
 // Listen for window size changes so we can adjust element positions and visibility when necessary.
 window.addEventListener('resize', function() {
     adjustElementsAccordingToWindowSize();
