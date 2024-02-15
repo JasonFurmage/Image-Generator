@@ -94,7 +94,7 @@ function saveImage() {
             updateLibraryBackground();
             
         } else {
-            $.notifi("Image has aleady been saved to this account.", { noticeClass:'custom-class failure' })
+            $.notifi("Image has already been saved to this account.", { noticeClass:'custom-class failure' })
         }
     }
 }
