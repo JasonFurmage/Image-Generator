@@ -15,3 +15,8 @@
 .select-menu {
     width: 100%;
 }
+
+// Highlight text field when errors are found.
+.error {
+    border-color: $red;
+}

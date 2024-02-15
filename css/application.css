@@ -527,6 +527,11 @@ select {
   width: 100%;
 }
 
+/* line 20, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/components/_inputs.scss */
+.error {
+  border-color: #ff6961;
+}
+
 /* line 1, ../../../../../Users/netmatters/Documents/GitHub/Image-Generator/scss/layout/_accounts.scss */
 .accounts_wrapper {
   display: flex;

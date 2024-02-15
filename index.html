@@ -55,13 +55,13 @@
 
                     <!-- Accounts (Will be here on smaller screens) -->
 
-                    <div class="accounts_wrapper" id="accounts">
+                    <div class="accounts_wrapper" id="accounts-wrapper">
                         <select class="select-menu" id="select-menu">
                             <option value="default">Choose account</option>
                             <option value="new">Add new account...</option>
                         </select>
                         <div class="accounts_new" id="accounts-new">
-                            <input class="text-field" type="email" maxlength="50" placeholder="Enter your email address" id="email">
+                            <input class="text-field" type="email" maxlength="50" placeholder="Enter your email address" id="text-field">
                             <div class="accounts_buttons">
                                 <button class="button add" onclick="addAccount()">Add</button>
                                 <button class="button cancel" onclick="hideAddAccount()">Cancel</button>
@@ -80,7 +80,7 @@
                             <button class="button save" onclick="saveImage()"> Save <i class="fa-solid fa-floppy-disk"></i></button>
                         </div>
                     </div>
-                    <button class="button lib sm-only" id="lib-button" onclick="showLibrary()"></button>
+                    <button class="button lib sm-only" id="library-button" onclick="showLibrary()"></button>
                 </div>
             </div>
         </div>
@@ -90,6 +90,12 @@
     <!-- JavaScript -->
     <script src="js/third-party/jquery-3.7.1.min.js"></script>
     <script src="js/third-party/notifi.min.js"></script>
+    <script src="js/variables.js"></script>
+    <script src="js/helper.js"></script>
+    <script src="js/fetch.js"></script>
+    <script src="js/library.js"></script>
+    <script src="js/listener.js"></script>
+    <script src="js/account.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

@@ -51,8 +51,19 @@
 	z-index:100;
 }
 
+
+/* Make notification bar width stretch across entire page and remove rounded corners. */
 .custom-class {
-    background-color: #ff6961!important;
 	border-radius: 0!important;
 	margin: 0!important;
+}
+
+/* Change background color for success notification. */
+.success {
+	background-color: #77DD77!important;
+}
+
+/* Change background color for failure notification. */
+.failure {
+	background-color: #ff6961!important;
 }
