@@ -2,7 +2,7 @@
 //  HELPER
 // ------------------------------------------
 
-// Get selected account (email) in a more readable way.
+// Get selected account in a more readable way.
 function getSelectedAccount() {
     return selectMenuEL.value;
 }

@@ -2,7 +2,7 @@
 //  EVENT LISTENERS
 // ------------------------------------------
 
-// Listen for select menu changes so we can show the selected library or new account section.
+// Listen for select menu changes so we can show the selected account library or new account section.
 selectMenuEL.addEventListener('change', function() {
     if (selectMenuEL.value === 'default' || selectMenuEL.value === 'new') {
         if (selectMenuEL.value === 'new') showAddAccount();
@@ -35,13 +35,13 @@ function adjustElementsAccordingToWindowSize() {
     }
 }
 
-// Move accounts wrapper to content so it appears above library and image.
+// Move accounts section to content so it appears above library and image.
 function moveAccountsWrapperToContent() {
     if (accountsWrapperEL.parentNode === mainEL) { mainEL.removeChild(accountsWrapperEL); }
     if (accountsWrapperEL.parentNode !== contentEL) { contentEL.insertBefore(accountsWrapperEL, contentWrapperEL); }
 }
 
-// Move accounts wrapper to main so it appears above image.
+// Move accounts section to main so it appears above image.
 function moveAccountsWrapperToMain() {
     if (accountsWrapperEL.parentNode === contentEL) { contentEL.removeChild(accountsWrapperEL); }
     if (accountsWrapperEL.parentNode !== mainEL) { mainEL.insertBefore(accountsWrapperEL, imageWrapperEL); }

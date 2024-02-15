@@ -17,7 +17,7 @@ function hideAddAccount() {
     if (selectMenuEL.value === 'new') selectMenuEL.value = 'default';
 }
 
-// Add account (email) to saved images object and select menu, show library button, and load new library.
+// Add account to saved images object and select menu, show library button, and load new library.
 function addAccount() {
     const email = textFieldEL.value;
 
@@ -42,7 +42,7 @@ function addAccount() {
     }
 }
 
-// Add account (email) to select menu and make it the selected value.
+// Add account to select menu and make it the selected value.
 function addSelectMenuOption(email) {
     const newOption = document.createElement("option");
     newOption.value = email;

@@ -62,7 +62,7 @@ function insertLibraryImages() {
     }
 }
 
-// We call this when switching libraries so the title, images, count and background for each library are correct.
+// Called when switching accounts so the title, images, count and background for each library are correct.
 function loadSelectedLibrary() {
     setLibraryTitle();
     insertLibraryImages();
@@ -70,13 +70,13 @@ function loadSelectedLibrary() {
     updateLibraryBackground();
 }
 
-// We call this when we want to show any empty library (e.g. when user has selected 'choose account' or 'add account')
+// Called when we want to show any empty library (e.g. when user has selected 'choose account' or 'add account')
 function unloadPreviousLibrary() {
     gridEL.innerHTML = "";
     updateLibraryBackground();
 }
 
-// Add current image url to selected account and update library.
+// Add current image url to selected account and update library to display image.
 function saveImage() {
     if (!currentImageURL) return;
 
